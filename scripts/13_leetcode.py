@@ -12,7 +12,7 @@ dic = {key:value for key, value in zip(roman_symbol, dec_value)}
         
 class Solution:
     
-    def romanToInt(Self, s):
+    def romanToInt(self, s):
         
         i = 0
         result = 0 
