@@ -1,1 +1,3 @@
-testing LeetCode problems
+Enjoy solving problems!
+
+Just like gaming!
