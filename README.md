@@ -19,6 +19,8 @@ Just like gaming!
 
 - BFS
 - DFS
+  - does the tree and its subtree apply the same question pattern?
+  - compare tree/subtree -> match string/sub-string
 
 ## Graph
 
