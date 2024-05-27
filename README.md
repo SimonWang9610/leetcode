@@ -14,6 +14,7 @@ Just like gaming!
 ## Permutations/Subsets
 
 - Backtracking
+  - cache intermediate results
 
 ## Tree
 
