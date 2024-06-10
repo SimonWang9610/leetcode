@@ -1,5 +1,8 @@
 // https://leetcode.com/problems/distribute-coins-in-binary-tree/description/
 
+// similar questions:
+// https://leetcode.com/problems/minimum-fuel-cost-to-report-to-the-capital/description/
+
 import { TreeNode } from "./tree_node";
 
 /**

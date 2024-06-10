@@ -1,68 +1,43 @@
-import { TreeBuilder, TreeNode } from "./tree/tree_node";
-
-function maxAncestorDiff(root: TreeNode | null): number {
-  if (!root) {
-    return 0;
+class NestedInteger {
+  isInteger(): boolean {
+    return true;
   }
-
-  let result = 0;
-
-  function dfs(node: TreeNode | null): { min: number; max: number } | null {
-    if (!node) {
-      return null;
-    }
-
-    let left = dfs(node.left);
-    let right = dfs(node.right);
-
-    let min = node.val;
-    let max = node.val;
-
-    if (left !== null) {
-      result = Math.max(
-        result,
-        Math.abs(node.val - left?.max),
-        Math.abs(node.val - left?.min)
-      );
-      min = Math.min(min, left.min);
-      max = Math.max(max, left.max);
-    }
-
-    if (right !== null) {
-      result = Math.max(
-        result,
-        Math.abs(node.val - right?.max),
-        Math.abs(node.val - right?.min)
-      );
-      min = Math.min(min, right.min);
-      max = Math.max(max, right.max);
-    }
-
-    return { min, max };
+  getInteger(): number {
+    return 1;
   }
-
-  dfs(root);
-
-  return result;
+  getList(): NestedInteger[] {
+    return [];
+  }
 }
 
-function test() {
-  let root = TreeBuilder.fromPreOrder([
-    8,
-    3,
-    10,
-    1,
-    6,
-    null,
-    14,
-    null,
-    null,
-    4,
-    7,
-    13,
-  ]);
+class NestedIterator {
+  current: NestedInteger | null;
+  gen: Generator<number>;
 
-  console.log(maxAncestorDiff(root));
+  constructor(nestedList: NestedInteger[]) {
+    this.gen = this.generator(nestedList);
+    this.current = nestedList[0];
+  }
+
+  hasNext(): boolean {
+    return this.current !== null;
+  }
+
+  next(): number {
+    return this.gen.next().value;
+  }
+
+  *generator(nestedList: NestedInteger[]): Generator<number> {
+    for (let nested of nestedList) {
+      this.current = nested;
+
+      if (nested.isInteger()) {
+        yield nested.getInteger();
+      } else {
+        yield* this.generator(nested.getList());
+      }
+    }
+
+    this.current = null;
+  }
 }
-
-test();
