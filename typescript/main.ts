@@ -1,43 +1,46 @@
-class NestedInteger {
-  isInteger(): boolean {
-    return true;
-  }
-  getInteger(): number {
-    return 1;
-  }
-  getList(): NestedInteger[] {
-    return [];
-  }
-}
+import { TreeNode } from "./tree/tree_node";
 
-class NestedIterator {
-  current: NestedInteger | null;
-  gen: Generator<number>;
-
-  constructor(nestedList: NestedInteger[]) {
-    this.gen = this.generator(nestedList);
-    this.current = nestedList[0];
+function amountOfTime(root: TreeNode | null, start: number): number {
+  if (!root) {
+    return 0;
   }
 
-  hasNext(): boolean {
-    return this.current !== null;
-  }
+  let depths: Record<string, number> = {};
+  let descendants: Set<string> = new Set();
 
-  next(): number {
-    return this.gen.next().value;
-  }
-
-  *generator(nestedList: NestedInteger[]): Generator<number> {
-    for (let nested of nestedList) {
-      this.current = nested;
-
-      if (nested.isInteger()) {
-        yield nested.getInteger();
-      } else {
-        yield* this.generator(nested.getList());
-      }
+  function dfs(node: TreeNode | null, depth: number, sameTree: boolean) {
+    if (!node) {
+      return;
     }
 
-    this.current = null;
+    if (!node.left && !node.right) {
+      depths[`${node.val}`] = depth;
+      if (sameTree) {
+        descendants.add(`${node.val}`);
+      }
+      return;
+    }
+
+    let same = sameTree || node.val === start;
+
+    dfs(node.left, depth + 1, same);
+    dfs(node.right, depth + 1, same);
   }
+
+  dfs(root, 0, root.val === start);
+
+  let max = 0;
+  let target = depths[start];
+
+  console.log(depths, descendants);
+
+  for (let [key, val] of Object.entries(depths)) {
+    let distance = descendants.has(key)
+      ? depths[parseInt(key)] - target
+      : depths[parseInt(key)] + target - 1;
+
+    max = Math.max(max, distance);
+  }
+
+  return max;
 }

@@ -1,10 +1,13 @@
 // https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
 
+// similar questions:
+// https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/description/
+
 import { TreeNode } from "./tree_node";
 
 /**
  * 1. build the parent tree
- * 2. dfs the tree from the target node to find all nodes with distance k (need to skip visited nodes)
+ * 2. dfs the tree from the TARGET node to find all nodes with distance k (need to skip visited nodes)
  */
 function distanceK(
   root: TreeNode | null,

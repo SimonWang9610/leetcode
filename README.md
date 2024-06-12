@@ -20,9 +20,12 @@ Just like gaming!
 
 - BFS
 - DFS
+
   - find recursion pattern
   - compare tree/subtree -> match string/sub-string
   - try **in-place** if building a new tree from another tree
+
+- traversal from the TARGET node if the relation is about the TARGET node
 
 ## Graph
 
