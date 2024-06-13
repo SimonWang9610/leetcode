@@ -2,6 +2,7 @@
 
 // similar questions:
 // https://leetcode.com/problems/minimum-fuel-cost-to-report-to-the-capital/description/
+// https://leetcode.com/problems/make-costs-of-paths-equal-in-a-binary-tree/description/
 
 import { TreeNode } from "./tree_node";
 

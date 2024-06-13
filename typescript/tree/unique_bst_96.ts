@@ -5,6 +5,8 @@ import { TreeNode } from "./tree_node";
 /**
  * 1. Dynamic programming
  * 2. Steps[k] = ∑ Steps[i] * Steps[k - i - 1]
+ *
+ * Choose a given number as the root, the result should be all combinations of possible left and right subtrees.
  */
 function numTrees(n: number): number {
   let steps: Record<number, number> = {};
