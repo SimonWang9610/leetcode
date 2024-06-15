@@ -83,11 +83,3 @@ function anotherSolution(root: TreeNode | null): number[] {
 
   return result;
 }
-
-function test() {
-  let root = TreeBuilder.fromPreOrder([1, 0, 1, 0, 0, 1, 1, 0]);
-
-  console.log(anotherSolution(root));
-}
-
-test();

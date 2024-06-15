@@ -1,46 +1,105 @@
-import { TreeNode } from "./tree/tree_node";
+import { TreeBuilder, TreeNode } from "./tree/tree_node";
 
-function amountOfTime(root: TreeNode | null, start: number): number {
+function serialize(root: TreeNode | null): string {
   if (!root) {
-    return 0;
+    return "";
   }
 
-  let depths: Record<string, number> = {};
-  let descendants: Set<string> = new Set();
+  let answer = "";
 
-  function dfs(node: TreeNode | null, depth: number, sameTree: boolean) {
-    if (!node) {
-      return;
-    }
+  let queue: (TreeNode | null)[] = [root];
 
-    if (!node.left && !node.right) {
-      depths[`${node.val}`] = depth;
-      if (sameTree) {
-        descendants.add(`${node.val}`);
+  while (queue.length > 0) {
+    let count = queue.length;
+
+    for (let i = 0; i < count; i++) {
+      let node = queue.shift();
+
+      if (!node) {
+        answer += answer.length ? " -1" : "-1";
+      } else {
+        answer += answer.length
+          ? ` ${node.val.toString(16)}`
+          : `${node.val.toString(16)}`;
+
+        queue.push(node.left);
+        queue.push(node.right);
       }
-      return;
+    }
+  }
+
+  return answer;
+}
+
+/*
+ * Decodes your encoded data to tree.
+ */
+function deserialize(data: string): TreeNode | null {
+  let elements = data.split(" ");
+
+  if (!elements.length) {
+    return null;
+  }
+
+  function build(index: number): TreeNode | null {
+    let parsed = parseInt(elements[index], 16);
+
+    if (parsed === -1) {
+      return null;
     }
 
-    let same = sameTree || node.val === start;
-
-    dfs(node.left, depth + 1, same);
-    dfs(node.right, depth + 1, same);
+    return new TreeNode(parsed);
   }
 
-  dfs(root, 0, root.val === start);
+  let root = build(0);
 
-  let max = 0;
-  let target = depths[start];
-
-  console.log(depths, descendants);
-
-  for (let [key, val] of Object.entries(depths)) {
-    let distance = descendants.has(key)
-      ? depths[parseInt(key)] - target
-      : depths[parseInt(key)] + target - 1;
-
-    max = Math.max(max, distance);
+  if (!root) {
+    return null;
   }
 
-  return max;
+  let queue: { node: TreeNode | null; index: number }[] = [
+    { node: root, index: 0 },
+  ];
+
+  while (queue.length > 0) {
+    let { index, node } = queue.shift()!;
+
+    if (!node) {
+      continue;
+    }
+
+    let leftIndex = 2 * index + 1;
+    let rightIndex = leftIndex + 1;
+
+    if (leftIndex < elements.length) {
+      let left = build(leftIndex);
+      node.left = left;
+      queue.push({
+        node: left,
+        index: leftIndex,
+      });
+    }
+
+    if (rightIndex < elements.length) {
+      let right = build(rightIndex);
+      node.right = right;
+      queue.push({
+        node: right,
+        index: rightIndex,
+      });
+    }
+  }
+
+  return root;
 }
+
+function test() {
+  let testCase = [2, 1, 3];
+
+  let root = TreeBuilder.fromPreOrder(testCase);
+
+  let serialized = serialize(root);
+
+  let deserialized = deserialize(serialized);
+}
+test();
