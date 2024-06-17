@@ -27,6 +27,13 @@ Just like gaming!
 
 - traversal from the TARGET node if the relation is about the TARGET node
 
+- tree sum
+
+  1. decrease from top to bottom
+  2. increase from top to bottom
+
+- bottom-up if result rely on children selection
+
 ## Graph
 
 - BFS
