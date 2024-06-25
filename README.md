@@ -34,6 +34,14 @@ Just like gaming!
 
 - bottom-up if result rely on children selection
 
+- will the DFS pattern affect other branches (sub-problems)?
+- will the intermediate result of DFS is enough to solve the sub-problem?
+  - for example, the current intermediate result may rely on the result of another sub-problem
+
+1. understand the problem
+2. construct the pattern
+3. relation between sub-problems (between current node, its siblings and ancestors)
+
 ## Graph
 
 - BFS
