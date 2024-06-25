@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. cache the old index of each node before sorting.

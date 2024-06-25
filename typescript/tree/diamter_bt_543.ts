@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/diameter-of-binary-tree/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. Max(Height(leftTree) + Height(rightTree)) for each node == diameter

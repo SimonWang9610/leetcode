@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 function findSecondMinimumValue(root: TreeNode | null): number {
   if (!root) {

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/count-complete-tree-nodes/description/
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. If left height === right height, it means the left subtree is a full binary tree: 1 << leftHeight (inclusive the root)

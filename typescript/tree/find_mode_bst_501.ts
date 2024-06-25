@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/find-mode-in-binary-search-tree/description/
 
-import { TreeBuilder, TreeNode } from "./tree_node";
+import { TreeBuilder, TreeNode } from "../../datastructure/tree_node";
 
 function findMode(root: TreeNode | null): number[] {
   if (!root) {

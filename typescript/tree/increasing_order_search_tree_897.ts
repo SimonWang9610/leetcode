@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/increasing-order-search-tree/
 
-import { TreeNode, TreeBuilder } from "./tree_node";
+import { TreeNode, TreeBuilder } from "../../datastructure/tree_node";
 
 /**
  * 1. always return the head of the entire formatted tree

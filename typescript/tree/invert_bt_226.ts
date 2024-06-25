@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/invert-binary-tree/description/
-import { TreeNode, TreeBuilder } from "./tree_node";
+import { TreeNode, TreeBuilder } from "../../datastructure/tree_node";
 
 function invertTree(root: TreeNode | null): TreeNode | null {
   if (!root) {

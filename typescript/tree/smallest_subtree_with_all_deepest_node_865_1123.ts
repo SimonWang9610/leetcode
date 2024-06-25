@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/description/
 // https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 function solution(root: TreeNode | null): TreeNode | null {
   if (!root) {

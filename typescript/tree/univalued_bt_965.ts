@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/univalued-binary-tree/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 function isUnivalTree(root: TreeNode | null): boolean {
   if (!root) {

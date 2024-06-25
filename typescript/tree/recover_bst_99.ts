@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/recover-binary-search-tree/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. find the first larger node and the last smaller node using in-order traversal

@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/all-possible-full-binary-trees/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. we must go through all possible full binary trees with n nodes like backtracing;

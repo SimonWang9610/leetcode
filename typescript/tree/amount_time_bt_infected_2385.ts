@@ -4,7 +4,7 @@
 // https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/description/
 // https://leetcode.com/problems/time-needed-to-inform-all-employees/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * the question can be converted as: the max distance between the target node and any other node.

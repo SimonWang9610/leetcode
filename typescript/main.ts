@@ -1,105 +1,112 @@
-import { TreeBuilder, TreeNode } from "./tree/tree_node";
+class LockingTree {
+  locked: Record<number, number | null>;
+  tree: Record<number, number[]>;
+  parent: number[];
 
-function serialize(root: TreeNode | null): string {
-  if (!root) {
-    return "";
+  constructor(parent: number[]) {
+    let tree: Record<number, number[]> = {};
+    let locked: Record<number, number | null> = {};
+
+    for (let i = 1; i < parent.length; i++) {
+      let p = parent[i];
+
+      if (!tree[p]) {
+        tree[p] = [i];
+      } else {
+        tree[p].push(i);
+      }
+
+      if (!tree[i]) {
+        tree[i] = [];
+      }
+
+      locked[i] = null;
+    }
+
+    console.log(tree);
+
+    this.locked = locked;
+    this.tree = tree;
+    this.parent = parent;
   }
 
-  let answer = "";
+  lock(num: number, user: number): boolean {
+    let lock = this.locked[num];
 
-  let queue: (TreeNode | null)[] = [root];
+    if (lock) {
+      return false;
+    } else {
+      this.locked[num] = user;
+      return true;
+    }
+  }
 
-  while (queue.length > 0) {
-    let count = queue.length;
+  unlock(num: number, user: number): boolean {
+    let lock = this.locked[num];
 
-    for (let i = 0; i < count; i++) {
-      let node = queue.shift();
+    if (lock !== user) {
+      return false;
+    } else {
+      this.locked[num] = null;
+      return true;
+    }
+  }
 
-      if (!node) {
-        answer += answer.length ? " -1" : "-1";
+  upgrade(num: number, user: number): boolean {
+    let lock = this.locked[num];
+
+    if (lock) {
+      return false;
+    }
+
+    let p = this.parent[num];
+
+    while (p >= 0) {
+      let lock = this.locked[p];
+
+      if (lock) {
+        return false;
       } else {
-        answer += answer.length
-          ? ` ${node.val.toString(16)}`
-          : `${node.val.toString(16)}`;
-
-        queue.push(node.left);
-        queue.push(node.right);
+        p = this.parent[p];
       }
     }
-  }
 
-  return answer;
+    console.log(`num: ${num}, parent not locked`);
+
+    let children: number[] = this.tree[num];
+
+    let unlocked = 0;
+
+    while (children.length > 0) {
+      let count = children.length;
+
+      for (let i = 0; i < count; i++) {
+        let child = children.shift()!;
+
+        if (this.locked[child]) {
+          this.locked[child] = null;
+          unlocked++;
+        }
+
+        if (this.tree[child]) {
+          children.push(...this.tree[child]);
+        }
+      }
+    }
+
+    if (unlocked) {
+      this.locked[num] = user;
+    }
+
+    return unlocked > 0;
+  }
 }
 
-/*
- * Decodes your encoded data to tree.
- */
-function deserialize(data: string): TreeNode | null {
-  let elements = data.split(" ");
+function main() {
+  let tree = new LockingTree([-1, 0, 3, 4, 7, 4, 3, 0, 1, 8]);
 
-  if (!elements.length) {
-    return null;
-  }
-
-  function build(index: number): TreeNode | null {
-    let parsed = parseInt(elements[index], 16);
-
-    if (parsed === -1) {
-      return null;
-    }
-
-    return new TreeNode(parsed);
-  }
-
-  let root = build(0);
-
-  if (!root) {
-    return null;
-  }
-
-  let queue: { node: TreeNode | null; index: number }[] = [
-    { node: root, index: 0 },
-  ];
-
-  while (queue.length > 0) {
-    let { index, node } = queue.shift()!;
-
-    if (!node) {
-      continue;
-    }
-
-    let leftIndex = 2 * index + 1;
-    let rightIndex = leftIndex + 1;
-
-    if (leftIndex < elements.length) {
-      let left = build(leftIndex);
-      node.left = left;
-      queue.push({
-        node: left,
-        index: leftIndex,
-      });
-    }
-
-    if (rightIndex < elements.length) {
-      let right = build(rightIndex);
-      node.right = right;
-      queue.push({
-        node: right,
-        index: rightIndex,
-      });
-    }
-  }
-
-  return root;
+  tree.lock(1, 1);
+  tree.upgrade(3, 8);
 }
 
-function test() {
-  let testCase = [2, 1, 3];
-
-  let root = TreeBuilder.fromPreOrder(testCase);
-
-  let serialized = serialize(root);
-
-  let deserialized = deserialize(serialized);
-}
-test();
+main();

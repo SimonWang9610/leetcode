@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * As long as the number of odd numbers in the array is less than or equal to 1, its permutation can be a palindrome;

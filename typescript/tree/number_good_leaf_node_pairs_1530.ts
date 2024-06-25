@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. If the node is a leaf node, we remember: the number of nodes that distance 1 is 1 (itself).

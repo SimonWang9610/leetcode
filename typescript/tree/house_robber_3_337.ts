@@ -4,7 +4,7 @@
 // https://leetcode.com/problems/distribute-coins-in-binary-tree/description/
 //
 
-import { TreeNode } from "../tree/tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  *

@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/symmetric-tree/description/
 
-import { TreeBuilder, TreeNode } from "./tree_node";
+import { TreeBuilder, TreeNode } from "../../datastructure/tree_node";
 
 /**
  * DFS: we need to compare the left subtree with the right subtree INSTEAD of [left vs.left] and [right vs. right]

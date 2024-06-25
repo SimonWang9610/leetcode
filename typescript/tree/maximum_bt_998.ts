@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/maximum-binary-tree-ii/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 function insertIntoMaxTree(
   root: TreeNode | null,

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/average-of-levels-in-binary-tree/description/
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 /**
  * 1. For BFS solution, we use a queue to store the nodes at each level, and calculate the average value of the nodes at each level
  * 2. For DFS solution, we need to sum the current node value at its depth, and increase the count of nodes at the same depth

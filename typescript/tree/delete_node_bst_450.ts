@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/delete-node-in-a-bst/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. find the target node

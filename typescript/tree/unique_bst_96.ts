@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/unique-binary-search-trees/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. Dynamic programming

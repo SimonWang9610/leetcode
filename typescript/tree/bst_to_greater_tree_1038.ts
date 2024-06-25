@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
 
-import { TreeBuilder, TreeNode } from "./tree_node";
+import { TreeBuilder, TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. Just update the value in-place in the given tree INSTEAD of creating a new tree from the calculated values;

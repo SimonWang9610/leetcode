@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/binary-tree-preorder-traversal/description/
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. For DFS solution, we always first visit the left subtree, then the right subtree.

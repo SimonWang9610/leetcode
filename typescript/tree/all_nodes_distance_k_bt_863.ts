@@ -3,7 +3,7 @@
 // similar questions:
 // https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. build the parent tree

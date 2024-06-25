@@ -1,6 +1,6 @@
 //https://leetcode.com/problems/search-in-a-binary-search-tree/
 
-import { TreeNode, TreeBuilder } from "./tree_node";
+import { TreeNode, TreeBuilder } from "../../datastructure/tree_node";
 
 function searchBST(root: TreeNode | null, val: number): TreeNode | null {
   if (!root || root.val === val) {

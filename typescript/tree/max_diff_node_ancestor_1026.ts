@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/description/
 
-import { TreeBuilder, TreeNode } from "./tree_node";
+import { TreeBuilder, TreeNode } from "../../datastructure/tree_node";
 
 function maxAncestorDiff(root: TreeNode | null): number {
   if (!root) {

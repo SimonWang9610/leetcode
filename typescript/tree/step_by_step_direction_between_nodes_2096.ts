@@ -3,7 +3,7 @@
 // similar question
 // https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 type Path = { val: number; direction: string };
 

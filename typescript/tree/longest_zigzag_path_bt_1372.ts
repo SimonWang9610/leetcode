@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * Given a binary tree root, there are two paths that pass the given node.

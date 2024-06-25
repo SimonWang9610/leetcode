@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * Always return the tail of the flattened tree

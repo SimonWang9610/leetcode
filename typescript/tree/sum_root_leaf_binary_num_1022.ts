@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/
 
-import { TreeNode, TreeBuilder } from "./tree_node";
+import { TreeNode, TreeBuilder } from "../../datastructure/tree_node";
 
 /**
  * 1. using bitwise operation to calculate the current value at each depth

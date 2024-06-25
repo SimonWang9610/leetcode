@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/binary-tree-tilt/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 function findTilt(root: TreeNode | null): number {
   if (!root) {

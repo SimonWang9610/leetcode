@@ -1,6 +1,9 @@
 // https://leetcode.com/problems/path-sum-iii/description/
 
-import { TreeNode } from "./tree_node";
+// similar question:
+// https://leetcode.com/problems/linked-list-in-binary-tree/description/
+
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  *! 1. cannot use pathSum(node.left, targetSum-node.val), as it cannot guarantee the path is continuous.

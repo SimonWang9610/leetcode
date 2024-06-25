@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/binary-tree-paths/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 function dfsSolution(root: TreeNode | null): string[] {
   if (!root) {

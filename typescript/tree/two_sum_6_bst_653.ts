@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. collect all values into a sorted array, then use two pointers to find the target

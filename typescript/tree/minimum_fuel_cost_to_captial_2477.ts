@@ -4,7 +4,7 @@
 // https://leetcode.com/problems/distribute-coins-in-binary-tree/description/
 // https://leetcode.com/problems/minimum-time-to-collect-all-apples-in-a-tree/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * For each city, we can calculate the cost of passengers of moving all its children and itself,

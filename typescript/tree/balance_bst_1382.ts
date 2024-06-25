@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/balance-a-binary-search-tree/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. inorder traversal of BST is always sorted;

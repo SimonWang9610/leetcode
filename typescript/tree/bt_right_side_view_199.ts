@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/binary-tree-right-side-view/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. From top-bottom, the result array is always incremented by 1 at each level

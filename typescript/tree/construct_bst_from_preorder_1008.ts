@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. in preorder traversal of BST, the array is shaped as [root, ...left, ...right]

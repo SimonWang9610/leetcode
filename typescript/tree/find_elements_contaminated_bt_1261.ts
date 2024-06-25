@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. all elements of the recovered tree are unique.

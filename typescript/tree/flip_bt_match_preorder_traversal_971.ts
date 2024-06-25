@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/flip-binary-tree-to-match-preorder-traversal/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. for preorder traversal, if any if its children is null, it will not affect the traversal result of its subtree.

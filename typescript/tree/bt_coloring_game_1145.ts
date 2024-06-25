@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/binary-tree-coloring-game/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. Color nodes from x and y, to see if y can infect more nodes than x.

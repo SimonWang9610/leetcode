@@ -3,7 +3,7 @@
 // similar question
 // https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. Find the path from root to p and q

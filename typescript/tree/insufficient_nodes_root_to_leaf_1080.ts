@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/insufficient-nodes-in-root-to-leaf-paths/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * Need to check again if the node is a leaf node after traversing the left and right nodes.

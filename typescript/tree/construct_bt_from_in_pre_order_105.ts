@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
 
-import { TreeNode } from "./tree_node";
+import { TreeNode } from "../../datastructure/tree_node";
 
 /**
  * 1. use inorderIndex to constrain the range of the left and right subtree
