@@ -4,6 +4,7 @@ import { TreeNode } from "../../datastructure/tree_node";
 
 // similar question:
 // https://leetcode.com/problems/path-sum-iii/description/
+// https://leetcode.com/problems/longest-univalue-path/
 
 function isSubPath(head: ListNode | null, root: TreeNode | null): boolean {
   if (!root) {
